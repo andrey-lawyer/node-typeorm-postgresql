@@ -10,10 +10,10 @@ function getSSLConfig(env) {
     const configs = {
         production: { rejectUnauthorized: true },
         local: false,
-        deploy: { rejectUnauthorized: false }
+        deploy: { rejectUnauthorized: false },
     };
     if (!configs[env] === undefined) {
-        throw new Error('Set network in your .env file');
+        throw new Error("Set network in your .env file");
     }
     return configs[env];
 }
@@ -22,19 +22,19 @@ const connectDB = async () => {
         const options = {
             host: process.env.POSTGRES_HOST,
             port: Number(process.env.POSTGRES_PORT),
-            logging: ['query', 'error'],
-            type: 'postgres',
+            logging: ["query", "error"],
+            type: "postgres",
             entities: [User_1.default, Todo_1.default],
-            migrations: ['dist/migrations/**/*.{ts,js}'],
-            subscribers: ['src/subscriber/**/*.ts'],
+            migrations: ["dist/migrations/**/*.{ts,js}"],
+            subscribers: ["src/subscriber/**/*.ts"],
             database: process.env.POSTGRES_DB,
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
             ssl: false,
-            synchronize: true
+            synchronize: true,
         };
         await (0, typeorm_1.createConnection)(options);
-        console.log('MongoDB Connected...');
+        console.log("Postgresql Connected...");
     }
     catch (err) {
         if (err instanceof Error) {
