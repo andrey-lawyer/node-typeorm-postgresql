@@ -1,4 +1,4 @@
-# Mongoose Node.js Express TypeScript application boilerplate with best practices for API development.
+# Postgresql Node.js Express TypeScript application boilerplate with best practices for API development.
 
 ## TO RUN PROJECT USE
 
